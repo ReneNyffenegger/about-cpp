@@ -1,3 +1,6 @@
+//
+//  g++ -std=c++11 based.cpp
+//
 #include <iostream>
 
 enum ENUM_char  : char  { a, b, c }; 
