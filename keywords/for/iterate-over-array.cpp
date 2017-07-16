@@ -13,5 +13,8 @@ int main() {
   for (auto  i : some_ints) {
     std::cout << i << std::endl;
   }
+  for (auto fib: {1, 1, 2, 3, 5, 8, 13, 21, 34}) {
+    std::cout << fib << std::endl;
+  }
 
 }
