@@ -1,0 +1,27 @@
+                                      //  gcc          |  cl
+// -----------------------------------//  -----------  +  --------------------------------
+#define A(...)         __VA_ARGS__    //               |
+A                                     //  A            |  A
+A()                                   //               |
+A(1)                                  //  1            |  1
+A(1,2)                                //  1,2          |  1,2
+                                      //               |
+#define B(...)    A(  __VA_ARGS__)    //               |
+B                                     //  B            |  B
+B()                                   //               |
+B(one)                                //  one          |  one
+B(one,two)                            //  one,two      |  one,two
+                                      //               |
+#define C(x, ...) A(x,__VA_ARGS__)    //               |
+C                                     //  C            |  C
+C()                                   //  ,            |  ,          basic(17): warning C4003: not enough arguments for function-like macro invocation 'C'
+C(i)                                  //  i,           |  i,
+C(ii,iii)                             //  ii,iii       |  ii,iii
+C(iv,v,vi)                            //  iv,v,vi      |  iv,v,vi
+                                      //               |
+#define D(x, ...) Q(x,__VA_ARGS__)    //               |
+D                                     //  D            |  D
+D()                                   //  Q(,)         |  Q( )       basic(24): warning C4003: not enough arguments for function-like macro invocation 'D'
+D(a)                                  //  Q(a,)        |  Q(a )
+D(b,c)                                //  Q(b,c)       |  Q(b,c)
+D(d,e,f)                              //  Q(d,e,f)     |  Q(d,e,f)
