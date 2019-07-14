@@ -1,0 +1,8 @@
+#define WITH_TP(x, y, ...)    with_tp(x, y, ## __VA_ARGS__)
+#define WITHOUT_TP(x, y, ...) without_tp(x, y,  __VA_ARGS__)
+
+WITH_TP(one, two)
+WITH_TP(three, four, five)
+
+WITHOUT_TP(1, 2)
+WITHOUT_TP(3, 4, 5)
