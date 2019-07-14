@@ -10,7 +10,7 @@ class RuleOfFive {
       int num;
 
    public:
-      RuleOfFive(int n);                                   // Constructor
+      RuleOfFive(int n);                                  // Constructor
       RuleOfFive(RuleOfFive const &other);                // Copy constructor
       RuleOfFive(RuleOfFive &&other) noexcept;            // Move Constructor
       RuleOfFive& operator=(RuleOfFive const& other);     // Copy Assignment
